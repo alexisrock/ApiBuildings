@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiOLSoftwareRest</name>
+    </assembly>
+    <members>
+        <member name="M:ApiOLSoftwareRest.Controllers.AuthenticationController.#ctor(Core.Interfaces.IUsuarioService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiOLSoftwareRest.Helpers.AuthorizeAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            Metodo que valida el token
+            </summary>
+        </member>
+        <member name="M:ApiOLSoftwareRest.Middlewares.JwtMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiOLSoftwareRest.Middlewares.JwtMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Core.Interfaces.IUsuarioService)">
+            <summary>
+            Metodo para validar el token
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,46 @@
+2025-01-29 17:19:58.6895 Error Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'configuration' from section 'NLog'
+2025-01-29 17:19:58.6934 Error Exception when loading configuration D:\Documentos\Projects\C#\PruebaServicioRest\Api\nlog.config Exception: NLog.NLogConfigurationException: Unrecognized element 'configuration' from section 'NLog'
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+2025-01-29 17:19:58.7381 Error Error has been raised. Exception: NLog.NLogConfigurationException: Exception when loading configuration D:\Documentos\Projects\C#\PruebaServicioRest\Api\nlog.config
+ ---> NLog.NLogConfigurationException: Unrecognized element 'configuration' from section 'NLog'
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   at NLog.Config.LoggingConfigurationFileLoader.LoadXmlLoggingConfiguration(XmlReader xmlReader, String configFile, LogFactory logFactory)
+2025-01-29 17:19:58.7381 Error Failed loading from config file location: D:\Documentos\Projects\C#\PruebaServicioRest\Api\nlog.config Exception: NLog.NLogConfigurationException: Exception when loading configuration D:\Documentos\Projects\C#\PruebaServicioRest\Api\nlog.config
+ ---> NLog.NLogConfigurationException: Unrecognized element 'configuration' from section 'NLog'
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   at NLog.Config.LoggingConfigurationFileLoader.LoadXmlLoggingConfiguration(XmlReader xmlReader, String configFile, LogFactory logFactory)
+   at NLog.Config.LoggingConfigurationFileLoader.LoadXmlLoggingConfigurationFile(LogFactory logFactory, String configFile)
+   at NLog.Config.LoggingConfigurationFileLoader.TryLoadLoggingConfiguration(LogFactory logFactory, String configFile, LoggingConfiguration& config)
+2025-01-29 17:21:33.0096 Error Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'configuration' from section 'NLog'
+2025-01-29 17:21:33.0096 Error Exception when loading configuration D:\Documentos\Projects\C#\PruebaServicioRest\Api\nlog.config Exception: NLog.NLogConfigurationException: Unrecognized element 'configuration' from section 'NLog'
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+2025-01-29 17:21:33.0438 Error Error has been raised. Exception: NLog.NLogConfigurationException: Exception when loading configuration D:\Documentos\Projects\C#\PruebaServicioRest\Api\nlog.config
+ ---> NLog.NLogConfigurationException: Unrecognized element 'configuration' from section 'NLog'
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   at NLog.Config.LoggingConfigurationFileLoader.LoadXmlLoggingConfiguration(XmlReader xmlReader, String configFile, LogFactory logFactory)
+2025-01-29 17:21:33.0438 Error Failed loading from config file location: D:\Documentos\Projects\C#\PruebaServicioRest\Api\nlog.config Exception: NLog.NLogConfigurationException: Exception when loading configuration D:\Documentos\Projects\C#\PruebaServicioRest\Api\nlog.config
+ ---> NLog.NLogConfigurationException: Unrecognized element 'configuration' from section 'NLog'
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   at NLog.Config.LoggingConfigurationFileLoader.LoadXmlLoggingConfiguration(XmlReader xmlReader, String configFile, LogFactory logFactory)
+   at NLog.Config.LoggingConfigurationFileLoader.LoadXmlLoggingConfigurationFile(LogFactory logFactory, String configFile)
+   at NLog.Config.LoggingConfigurationFileLoader.TryLoadLoggingConfiguration(LogFactory logFactory, String configFile, LoggingConfiguration& config)

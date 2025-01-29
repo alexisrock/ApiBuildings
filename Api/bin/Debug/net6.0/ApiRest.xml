@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiRest</name>
+    </assembly>
+    <members>
+        <member name="T:ApiRest.Controllers.AuthenticationController">
+            <summary>
+            Controller of Authentication
+            </summary>
+        </member>
+        <member name="M:ApiRest.Controllers.AuthenticationController.#ctor(Aplication.Interfaces.IUserService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiRest.Controllers.AuthenticationController.Authentication(Domain.Dto.UserTokenRequest)">
+             <summary>
+             Method of authentication       
+             </summary>
+              
+             <returns></returns>
+             /// <remarks>
+             Request example:
+              
+                 {
+                    "UserName": "prueba",
+                    "Password": "cHJ1RUJB"
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiRest.Controllers.AuthenticationController.Create(Domain.Dto.UserRequest)">
+             <summary>
+             Method of user create       
+             </summary>
+            
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "UserName": "prueba",
+                    "Password": "cHJ1RUJB"
+                   
+                 }
+            
+             </remarks>
+        </member>
+        <member name="T:ApiRest.Controllers.OwnerController">
+            <summary>
+            Controller of Owner
+            </summary>
+        </member>
+        <member name="M:ApiRest.Controllers.OwnerController.#ctor(Aplication.Interfaces.IOwnerService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiRest.Controllers.OwnerController.GetAll">
+            <summary>
+            Method of list all owner       
+            </summary>
+             
+            <returns></returns>
+        </member>
+        <member name="M:ApiRest.Controllers.OwnerController.Create(Domain.DTO.OwnerRequest)">
+             <summary>
+             Method of owner create       
+             </summary>
+              
+             <returns></returns>
+             /// <remarks>
+             Request example:
+              
+                 {
+                    "Name": "Apartamento",
+                    "Address": "calle 13 # 56 - 24",
+                    "Photo": "C://imagen.foto",
+                    "Birthday": "2025-01-23"
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="T:ApiRest.Controllers.PropertyController">
+            <summary>
+            Controller of Property
+            </summary>
+        </member>
+        <member name="M:ApiRest.Controllers.PropertyController.#ctor(Aplication.Interfaces.IPropertyService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiRest.Controllers.PropertyController.GetAll(System.String,System.Nullable{System.Int32},System.String,System.Nullable{System.Int32},System.Int32,System.Int32)">
+            <summary>
+            Method of list all owner       
+            </summary>
+             
+            <returns></returns>
+        </member>
+        <member name="M:ApiRest.Controllers.PropertyController.Create(Domain.DTO.PropertyRequest)">
+             <summary>
+             Method of property create       
+             </summary>
+              
+             <returns></returns>
+             /// <remarks>
+             Request example:
+                 
+                 {
+                         "Name": "casa",
+                         "Address": "calle 13 # 56 - 24",
+                         "Price": 1000.34,
+                         "CodeInternal": "C757567",
+                         "Year": 20,
+                         "IdOwner": 1,
+                         "FileImage": "C://imagen",
+                         "Enabled": true,
+                         "DateSale": "2025-01-29",
+                         "NameTrace": "dfsdfsdfsdfdsfsd",
+                         "Value": 1200,
+                         "Tax": 1.2        
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiRest.Controllers.PropertyController.Update(Domain.DTO.PropertyUpdateRequest)">
+             <summary>
+             Method of property update       
+             </summary>
+              
+             <returns></returns>
+             /// <remarks>
+             Request example:
+                 
+                 {
+                     "IdProperty": 1,
+                     "Name": "casa",
+                     "Address": "calle 13 # 56 - 24",
+                     "Price": 1000.34,
+                     "CodeInternal": "C757567",
+                     "Year": 20   ,
+                     "IdOwner":1  
+                 }
+            
+             </remarks>
+        </member>
+        <member name="T:ApiRest.Controllers.PropertyImagesController">
+            <summary>
+            Controller of Property Images
+            </summary>
+        </member>
+        <member name="M:ApiRest.Controllers.PropertyImagesController.#ctor(Aplication.Interfaces.IPropertyImageService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiRest.Controllers.PropertyImagesController.Update(Domain.DTO.PropertyImagesUpdateRequest)">
+             <summary>
+             Method of property Images  update       
+             </summary>
+              
+             <returns></returns>
+             /// <remarks>
+             Request example:
+                 
+                 {
+                     "IdPropertyImage": 1,
+                     "IdProperty": 1,
+                     "FileImage": "C://imagen",
+                     "Enabled": true      
+                 }
+            
+             </remarks>
+        </member>
+        <member name="T:ApiRest.Controllers.PropertyTraceController">
+            <summary>
+            Controller of Property Trace
+            </summary>
+        </member>
+        <member name="M:ApiRest.Controllers.PropertyTraceController.#ctor(Aplication.Interfaces.IPropertyTraceService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiRest.Controllers.PropertyTraceController.Update(Domain.DTO.PropertyTraceUpdateRequest)">
+             <summary>
+             Method of property Trace  update       
+             </summary>
+              
+             <returns></returns>
+             /// <remarks>
+             Request example:
+                 
+                 {
+                     "IdPropertyTrace": 1,
+                     "IdProperty": 1,
+                     "DateSale": "2025-01-29",
+                     "NameTrace": "dfsdfsdfsdfdsfsd",
+                     "Value": 1200,
+                     "Tax": 1.2  
+                 }
+            
+             </remarks>
+        </member>
+        <member name="T:ApiRest.Helpers.AuthorizeAttribute">
+            <summary>
+            Clase validacion de token
+            </summary>
+        </member>
+        <member name="M:ApiRest.Helpers.AuthorizeAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            Metodo que valida el token
+            </summary>
+        </member>
+        <member name="T:ApiRest.Middlewares.JwtMiddleware">
+            <summary>
+            Middleware de comprobacion del token
+            </summary>
+        </member>
+        <member name="M:ApiRest.Middlewares.JwtMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiRest.Middlewares.JwtMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Aplication.Interfaces.ITokenService)">
+            <summary>
+            Metodo para validar el token
+            </summary>
+        </member>
+    </members>
+</doc>
