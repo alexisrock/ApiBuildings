@@ -23,9 +23,9 @@ namespace Aplication.Services
     {
         BaseResponse outPut;
         private readonly IPropertyTraceRepository _propertyTraceRepository;
-        private readonly ILogger<PropertyImageService> _logger;
+        private readonly ILogger<PropertyTraceService> _logger;
 
-        public PropertyTraceService(IPropertyTraceRepository propertyTraceRepository, ILogger<PropertyImageService> logger)
+        public PropertyTraceService(IPropertyTraceRepository propertyTraceRepository, ILogger<PropertyTraceService> logger)
         {
             outPut = new BaseResponse();
             _propertyTraceRepository = propertyTraceRepository;
@@ -36,7 +36,7 @@ namespace Aplication.Services
         {
             try
 			{
-                _logger.LogInformation("Executing Property trace Update request{ request}", request);
+                _logger.LogInformation("Executing Property trace Update request {Request}", request);
 
                 var result = await _propertyTraceRepository.GetPropertyTraceById(request.IdPropertyTrace);
                 if (result is not null)
@@ -44,7 +44,7 @@ namespace Aplication.Services
 
                     await this._propertyTraceRepository.UpdatePropertyTrace(result.GetPropertyTrace(request));
                     outPut.SetDataResponse(System.Net.HttpStatusCode.OK, "The property Trace  was update with success");
-                    _logger.LogInformation("Final execute Property trace Update request{ Request}", request);
+                    _logger.LogInformation("Final execute Property trace Update request {Request}", request);
 
                     return outPut;
                 }

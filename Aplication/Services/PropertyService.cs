@@ -41,7 +41,7 @@ namespace Aplication.Services
 
         public async Task<List<PropertyResponse>> GetPropertiesAll(FiltroProperty filtroObj)
         {
-            var list = new List<PropertyResponse>();
+             
             Expression<Func<Property, bool>> filtro = p => true;
 
             if (!string.IsNullOrEmpty(filtroObj.CodeInternal))
@@ -67,7 +67,7 @@ namespace Aplication.Services
 
             var listProperty = await this.repositoryProperty.GetPropertyAll(filtro, filtroObj.Pagina, filtroObj.TamanioPagina);
 
-            list = listProperty.GetPropertyAll();
+            var list = listProperty.GetPropertyAll();
             return list;
         }     
 
@@ -75,7 +75,7 @@ namespace Aplication.Services
         {
             try
             {
-                _logger.LogInformation("Executing Property Create request{ request}", request);
+                _logger.LogInformation("Executing property create request {Request}", request);
                 var property = mapper.Map<Property>(request);
                 var propertyImages = mapper.Map<PropertyImage>(request);
                 var propertyTrace = mapper.Map<PropertyTrace>(request);
@@ -83,7 +83,7 @@ namespace Aplication.Services
                 if (result == true)
                 {
                     outPut.SetDataResponse(System.Net.HttpStatusCode.OK, "The property  was create with success");
-                    _logger.LogInformation("Final execute Property Create request{ Request}", request);
+                    _logger.LogInformation("Final execute Property Create request {Request}", request);
                     return outPut;
                 }
                 outPut.SetDataResponse(System.Net.HttpStatusCode.BadRequest, "Bad Request");
@@ -101,7 +101,7 @@ namespace Aplication.Services
         {
             try
             {
-                _logger.LogInformation("Executing Property Update request{ request}", request);
+                _logger.LogInformation("Executing Property Update request {Request}", request);
 
                 var result = await this.repositoryProperty.GetPropertyById(request.IdProperty);
                 if (result is not null )
@@ -109,7 +109,7 @@ namespace Aplication.Services
 
                     await this.repositoryProperty.updateProperty(result.GetProperty(request));
                     outPut.SetDataResponse(System.Net.HttpStatusCode.OK, "The property  was update with success");
-                    _logger.LogInformation("Final execute Property Update request{ Request}", request);
+                    _logger.LogInformation("Final execute Property Update request {Request}", request);
 
                     return outPut;
                 }

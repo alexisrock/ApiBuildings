@@ -40,7 +40,7 @@ namespace Aplication.Services
         public async Task<BaseResponse> Create(OwnerRequest Request)
         {
             var outPut = new BaseResponse();
-            _logger.LogInformation("Executing owner create request{ Request}", Request);
+            _logger.LogInformation("Executing owner create request {Request}", Request);
             try
             {
                 if (Request is not null)
@@ -53,12 +53,13 @@ namespace Aplication.Services
                 }
                 outPut.SetDataResponse(System.Net.HttpStatusCode.BadRequest, "Request error");
 
-                _logger.LogInformation("Final execute owner create request{ Request}", Request);
+                _logger.LogInformation("Final execute owner create request {Request}", Request);
             }
             catch (Exception ex)
             {
                 outPut.SetDataResponse(System.Net.HttpStatusCode.InternalServerError, ex.Message);
-                _logger.LogError(ex.Message);
+                var message = ex.Message ?? ex.InnerException.Message;
+                _logger.LogError(message);
             }
 
             return outPut;
