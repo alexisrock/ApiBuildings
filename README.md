@@ -1,17 +1,5 @@
 
 
- 
-ApiBuildings
- se debe tener instalado el sdk de net6 para el correcto funcionamiento del proyecto
-
-
-el proyecto es un api rest cuya arquitectura es en capas la capa donde se realizaron las pruebas es en la capa de presentacion.
-
-el aplicativo esta creado en net 6 y para ejecutar las pruebas se debe hacer con 
-
-dotnet test para ejecutar las pruebas.
-
-
 
 <h1 align="center"> ApiBuildings </h1>
 
@@ -38,7 +26,7 @@ se utilizo la injeccion de dependencias de net 6.
 <h2 align="left"> Prerequisitos</h2>
 <p>
      
-    <ul> 
+<ul> 
         <li> se debe tener instalado sql server o tener acceso auna instancia sql server</li> 
         <li> crear la base de datos BuildingDB </li> 
         <li> crear el usuario de base de datos  UsrDeveloper con la misma contraseña  </li> 
@@ -47,7 +35,7 @@ se utilizo la injeccion de dependencias de net 6.
         <li> ejecutar el script </li> 
 
 
-    </ul>
+</ul>
 </p>
 
 
