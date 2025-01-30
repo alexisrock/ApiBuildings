@@ -42,12 +42,12 @@ se utilizo la injeccion de dependencias de net 6.
 <h2 align="left"> Instalacion</h2>
 <p>
      
-    <ul> 
+<ul> 
         <li> se debe primero tener instalado el sdk de net 6 </li> 
         <li> ubicar la carpeta Api y dentro de esa carpeta ejecutar el comadno "dotnet restore"  </li> 
         <li> luego  ejecutar el comadno "dotnet build --no-restore"  </li> 
         <li> luego  ejecutar el comadno "dotnet public -o rutaarchivos"  </li> 
-    </ul>
+</ul>
 </p>
 
 <h2 align="left"> Version del aplicativo</h2>
