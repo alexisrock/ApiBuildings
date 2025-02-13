@@ -14,6 +14,8 @@ using Domain.Interface;
 using Domain.Common.Enum;
 using Application.TransformBase;
 using Domain.Exceptions;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using FluentValidation;
 
 
 namespace Application.Services
@@ -29,13 +31,15 @@ namespace Application.Services
         private readonly IRepository<Users> usuarioRepository;
         private readonly IMapper mapper;
 
+        private readonly IValidator<UserTokenRequest> validator;
 
-        public UserService(IRepository<Configuration> configuiuracionRepository, IRepository<Users> usuarioRepository, IMapper mapper)
+
+        public UserService(IRepository<Configuration> configuiuracionRepository, IRepository<Users> usuarioRepository, IMapper mapper, IValidator<UserTokenRequest> validator)
         {
             this.configuiuracionRepository = configuiuracionRepository;
             this.usuarioRepository = usuarioRepository;
             this.mapper = mapper;
-
+            this.validator = validator;
         }
 
         public async Task<UserTokenResponse> GetAuthentication(UserTokenRequest userTokenRequest)
@@ -43,6 +47,15 @@ namespace Application.Services
             var UserTokenResponse = new UserTokenResponse();
             try
             {
+
+
+                var result = await validator.ValidateAsync(userTokenRequest);
+                if (!result.IsValid)
+                {
+                     
+                    throw new ApiException(result.Errors.ToString(), (int)System.Net.HttpStatusCode.Unauthorized);
+                }
+
 
                 var user = await ValidateUserName(userTokenRequest.UserName);
                 if (user is null)

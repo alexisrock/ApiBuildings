@@ -164,6 +164,9 @@ D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\ApiRest.pdb
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\ApiRest.xml
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\AutoMapper.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\FluentValidation.dll
+D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -227,6 +230,7 @@ D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\staticwebassets\msbu
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ApiRest.props
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ApiRest.props
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\ApiRest.csproj.Up2Date
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\ApiRest.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\refint\ApiRest.dll
