@@ -1,9 +1,9 @@
 
-using Infraestructure;
+using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
-using Aplication;
+using Application;
 using ApiRest.Middlewares;
 using NLog;
 using NLog.Extensions.Hosting;
@@ -85,7 +85,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 app.MapHealthChecks("/health");
 app.UseHttpsRedirection();
-
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseAuthorization();
 app.UseMiddleware<JwtMiddleware>();
 

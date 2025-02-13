@@ -5,9 +5,11 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using ApiRest.Controllers;
-using Aplication.Interfaces;
+using Application.Interfaces;
 using Domain.Common;
 using Domain.DTO;
+using Domain.Exceptions;
+using Domain.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -53,34 +55,44 @@ namespace ApiBuildTest.Api
         public async Task Update_ReturnsBadRequest_WhenServiceReturnsBadRequest()
         {
             // Arrange
-            var request = new PropertyImagesUpdateRequest {  };  
-            var baseResponse = new BaseResponse { StatusCode = HttpStatusCode.BadRequest,  };
-            Mock.Setup(x => x.Update(request)).ReturnsAsync(baseResponse);
+            var request = new PropertyImagesUpdateRequest {  };
+            Mock.Setup(x => x.Update(request)).ThrowsAsync(new NotFoundException("Error"));
 
             // Act
-            var result = await _controller.Update(request);
+            var ex = Assert.ThrowsAsync<NotFoundException>(async () =>
+            {
+                await _controller.Update(request);
+            });
+
 
             // Assert
-            Assert.IsInstanceOf<BadRequestResult>(result);
-            Assert.That(((BadRequestResult)result).StatusCode, Is.EqualTo(StatusCodes.Status400BadRequest));
+            Assert.That(ex.Message, Is.EqualTo("Error"));
+            Assert.That(ex.StatusCode, Is.EqualTo(404));
+
+
+           
         }
 
         [Test]
         public async Task Update_ReturnsProblem_WhenExceptionThrown()
         {
             // Arrange
-            var request = new PropertyImagesUpdateRequest {   };  
-            var exceptionMessage = "Test exception";
-            Mock.Setup(x => x.Update(request)).ThrowsAsync(new Exception(exceptionMessage));
+            var request = new PropertyImagesUpdateRequest {   };           
+            var exceptionMessage = "Test exception message";
+
+            Mock.Setup(x => x.Update(request)).ThrowsAsync(new ApiException(exceptionMessage));
 
             // Act
-            var result = await _controller.Update(request);
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                await _controller.Update(request);
+            });
+
 
             // Assert
-            Assert.IsInstanceOf<ObjectResult>(result);
-            var problemResult = (ObjectResult)result;
-            Assert.That(problemResult.StatusCode, Is.EqualTo(StatusCodes.Status500InternalServerError));
- 
+            Assert.That(ex.Message, Is.EqualTo("Test exception message"));
+            Assert.That(ex.StatusCode, Is.EqualTo(500));
+
         }
 
 

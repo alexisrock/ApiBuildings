@@ -1,6 +1,5 @@
 ﻿
-
-using Aplication.Interfaces;
+using Application.Interfaces;
 
 namespace ApiRest.Middlewares
 {
@@ -36,9 +35,7 @@ namespace ApiRest.Middlewares
         }
 
         private bool ValidateToken(string token, ITokenService tokenService)
-        {
-           
-           
+        {                
             return tokenService.ValidateToken(token).Result;
         }
 

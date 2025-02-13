@@ -35,8 +35,8 @@
               "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Api\\ApiRest.csproj": {
                 "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Api\\ApiRest.csproj"
               },
-              "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Aplication\\Aplication.csproj": {
-                "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Aplication\\Aplication.csproj"
+              "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Application\\Application.csproj": {
+                "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Application\\Application.csproj"
               },
               "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Domain\\Domain.csproj": {
                 "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Domain\\Domain.csproj"
@@ -133,14 +133,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Aplication\\Aplication.csproj": {
-                "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Aplication\\Aplication.csproj"
+              "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Application\\Application.csproj": {
+                "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Application\\Application.csproj"
               },
               "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Domain\\Domain.csproj": {
                 "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Domain\\Domain.csproj"
-              },
-              "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infraestructure\\Infraestructure.csproj": {
-                "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infraestructure\\Infraestructure.csproj"
               }
             }
           }
@@ -177,6 +174,10 @@
               "target": "Package",
               "version": "[5.3.15, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -205,14 +206,14 @@
         }
       }
     },
-    "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Aplication\\Aplication.csproj": {
+    "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Aplication\\Aplication.csproj",
-        "projectName": "Aplication",
-        "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Aplication\\Aplication.csproj",
+        "projectUniqueName": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\ALEXIS\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Aplication\\obj\\",
+        "outputPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -236,8 +237,8 @@
               "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Domain\\Domain.csproj": {
                 "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Domain\\Domain.csproj"
               },
-              "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infraestructure\\Infraestructure.csproj": {
-                "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infraestructure\\Infraestructure.csproj"
+              "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -362,14 +363,14 @@
         }
       }
     },
-    "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infraestructure\\Infraestructure.csproj": {
+    "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infraestructure\\Infraestructure.csproj",
-        "projectName": "Infraestructure",
-        "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infraestructure\\Infraestructure.csproj",
+        "projectUniqueName": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\ALEXIS\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infraestructure\\obj\\",
+        "outputPath": "D:\\Documentos\\Projects\\C#\\ApiBuildings\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

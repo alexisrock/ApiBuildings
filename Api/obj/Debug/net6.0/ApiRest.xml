@@ -9,7 +9,7 @@
             Controller of Authentication
             </summary>
         </member>
-        <member name="M:ApiRest.Controllers.AuthenticationController.#ctor(Aplication.Interfaces.IUserService)">
+        <member name="M:ApiRest.Controllers.AuthenticationController.#ctor(Application.Interfaces.IUserService)">
             <summary>
             Constructor
             </summary>
@@ -53,7 +53,7 @@
             Controller of Owner
             </summary>
         </member>
-        <member name="M:ApiRest.Controllers.OwnerController.#ctor(Aplication.Interfaces.IOwnerService)">
+        <member name="M:ApiRest.Controllers.OwnerController.#ctor(Application.Interfaces.IOwnerService)">
             <summary>
             Constructor
             </summary>
@@ -89,7 +89,7 @@
             Controller of Property
             </summary>
         </member>
-        <member name="M:ApiRest.Controllers.PropertyController.#ctor(Aplication.Interfaces.IPropertyService)">
+        <member name="M:ApiRest.Controllers.PropertyController.#ctor(Application.Interfaces.IPropertyService)">
             <summary>
             Constructor
             </summary>
@@ -153,7 +153,7 @@
             Controller of Property Images
             </summary>
         </member>
-        <member name="M:ApiRest.Controllers.PropertyImagesController.#ctor(Aplication.Interfaces.IPropertyImageService)">
+        <member name="M:ApiRest.Controllers.PropertyImagesController.#ctor(Application.Interfaces.IPropertyImageService)">
             <summary>
             Constructor
             </summary>
@@ -181,7 +181,7 @@
             Controller of Property Trace
             </summary>
         </member>
-        <member name="M:ApiRest.Controllers.PropertyTraceController.#ctor(Aplication.Interfaces.IPropertyTraceService)">
+        <member name="M:ApiRest.Controllers.PropertyTraceController.#ctor(Application.Interfaces.IPropertyTraceService)">
             <summary>
             Constructor
             </summary>
@@ -216,6 +216,21 @@
             Metodo que valida el token
             </summary>
         </member>
+        <member name="T:ApiRest.Middlewares.ExceptionHandlingMiddleware">
+            <summary>
+            Middleware de comprobacion de los errores  o excepciones
+            </summary>
+        </member>
+        <member name="M:ApiRest.Middlewares.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiRest.Middlewares.ExceptionHandlingMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Metodo para la generacion de los errores de la aplicacion
+            </summary>
+        </member>
         <member name="T:ApiRest.Middlewares.JwtMiddleware">
             <summary>
             Middleware de comprobacion del token
@@ -226,7 +241,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:ApiRest.Middlewares.JwtMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Aplication.Interfaces.ITokenService)">
+        <member name="M:ApiRest.Middlewares.JwtMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Application.Interfaces.ITokenService)">
             <summary>
             Metodo para validar el token
             </summary>

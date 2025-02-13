@@ -4,12 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Aplication.Interfaces;
+using Application.Interfaces;
 using ApiRest.Controllers;
 using Domain.DTO;
 using Microsoft.AspNetCore.Http;
 using Domain.Common;
 using Microsoft.AspNetCore.Mvc;
+using Domain.Exceptions;
+using Domain.Interface;
 
 namespace ApiBuildTest.Api
 {
@@ -48,22 +50,18 @@ namespace ApiBuildTest.Api
         public async Task GetAll_ReturnsProblem_WhenExceptionThrown()
         {
             // Arrange
-            _mockOwnerService.Setup(x => x.GetAll()).ThrowsAsync(new Exception());
+            _mockOwnerService.Setup(x => x.GetAll()).ThrowsAsync(new ApiException("error"));
 
             // Act
-            var result = await _controller.GetAll();
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                await _controller.GetAll();
+            });
+
 
             // Assert
-            Assert.IsInstanceOf<ObjectResult>(result);
-            var problemResult = (ObjectResult)result;
-
-            // Assert Status Code            
-            Assert.That(problemResult.StatusCode, Is.EqualTo(StatusCodes.Status500InternalServerError));
-
-            // Assert Problem Details (Optional but Recommended)
-            var problemDetails = problemResult.Value as ProblemDetails; // Cast to ProblemDetails
-            Assert.IsNotNull(problemDetails);
-
+            Assert.That(ex.Message, Is.EqualTo("error"));
+            Assert.That(ex.StatusCode, Is.EqualTo(500));
         }
 
         [Test]
@@ -89,19 +87,21 @@ namespace ApiBuildTest.Api
         [Test]
         public async Task Create_ReturnsBadRequest_WhenServiceReturnsBadRequest()
         {
-            // Arrange
-            var ownerRequest = new OwnerRequest();
-            var baseResponse = new BaseResponse { StatusCode = HttpStatusCode.BadRequest };
-            _mockOwnerService.Setup(x => x.Create(ownerRequest)).ReturnsAsync(baseResponse);
 
+            // Arrange
+            var ownerRequest = new OwnerRequest();           
+            _mockOwnerService.Setup(x => x.Create(ownerRequest)).ThrowsAsync(new NotFoundException("El nombre del edificio es obligatorio."));
             // Act
-            var result = await _controller.Create(ownerRequest);
+
+            var ex = Assert.ThrowsAsync<NotFoundException>(async () =>
+            {
+                await _controller.Create(ownerRequest);
+            });
+
 
             // Assert
-            
-             
-            Assert.IsNotNull(result);
-            Assert.That(((BadRequestResult)result).StatusCode, Is.EqualTo(StatusCodes.Status400BadRequest));
+            Assert.That(ex.Message, Is.EqualTo("El nombre del edificio es obligatorio."));
+            Assert.That(ex.StatusCode, Is.EqualTo(404));        
                        
         }
 
@@ -111,15 +111,18 @@ namespace ApiBuildTest.Api
         {
             // Arrange
             var ownerRequest = new OwnerRequest();
-            _mockOwnerService.Setup(x => x.Create(ownerRequest)).ThrowsAsync(new Exception());
+            _mockOwnerService.Setup(x => x.Create(ownerRequest)).ThrowsAsync(new ApiException("error"));
 
             // Act
-            var result = await _controller.Create(ownerRequest);
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                await _controller.Create(ownerRequest);
+            });
+
 
             // Assert
-            Assert.IsInstanceOf<ObjectResult>(result);
-            var problemResult = (ObjectResult)result;             
-            Assert.That(problemResult.StatusCode, Is.EqualTo(StatusCodes.Status500InternalServerError));
+            Assert.That(ex.Message, Is.EqualTo("error"));
+            Assert.That(ex.StatusCode, Is.EqualTo(500));
         }
 
 

@@ -1,7 +1,7 @@
 ﻿using Domain.Dto;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
-using Aplication.Interfaces;
+using Application.Interfaces;
 
 namespace ApiRest.Controllers
 {
@@ -14,14 +14,14 @@ namespace ApiRest.Controllers
     public class AuthenticationController : ControllerBase
     {
 
-       
+
         private readonly IUserService userService;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public AuthenticationController(  IUserService userService)
-        {             
+        public AuthenticationController(IUserService userService)
+        {
             this.userService = userService;
         }
 
@@ -49,19 +49,8 @@ namespace ApiRest.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Authentication([FromBody] UserTokenRequest userTokenRequest)
         {
-            try
-            {
-                var user = await userService.GetAuthentication(userTokenRequest);
-                if (user.StatusCode == HttpStatusCode.OK)
-                    return Ok(user);
-                else
-                    return Problem(user.Message, statusCode:(int)user.StatusCode);
-            }
-            catch (Exception)
-            {
-                return Problem();
-            }
-
+            var user = await userService.GetAuthentication(userTokenRequest);
+            return Ok(user);
         }
 
 
@@ -91,19 +80,8 @@ namespace ApiRest.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Create([FromBody] UserRequest userRequest)
         {
-            try
-            {
-                var user = await userService.CreateUser(userRequest);
-                if (user.StatusCode == HttpStatusCode.OK)
-                    return Ok(user);
-                else
-                    return Problem(user.Message, statusCode: (int)user.StatusCode);
-            }
-            catch (Exception)
-            {
-                return Problem();
-            }
-
+            var user = await userService.CreateUser(userRequest);
+            return Ok(user);
         }
 
 

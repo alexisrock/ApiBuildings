@@ -1,6 +1,6 @@
 ﻿using ApiRest.Helpers;
-using Aplication.Interfaces;
-using Aplication.Services;
+using Application.Interfaces;
+using Application.Services;
 using Domain.Common;
 using Domain.DTO;
 using Microsoft.AspNetCore.Http;
@@ -40,25 +40,17 @@ namespace ApiRest.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAll(string? CodeInternal, int? Year, string? Name, int? IdOwner, int Pagina, int TamanioPagina)
         {
-            try
-            {
 
-
-                var resukt = await propertyService.GetPropertiesAll(new FiltroProperty()
-                {
-                    TamanioPagina = TamanioPagina,
-                    Pagina = Pagina,
-                    CodeInternal = CodeInternal,
-                    Year = Year,
-                    Name = Name,
-                    IdOwner = IdOwner
-                });
-                return Ok(resukt);
-            }
-            catch (Exception ex)
+            var resukt = await propertyService.GetPropertiesAll(new FiltroProperty()
             {
-                return Problem(ex.Message);
-            }
+                TamanioPagina = TamanioPagina,
+                Pagina = Pagina,
+                CodeInternal = CodeInternal,
+                Year = Year,
+                Name = Name,
+                IdOwner = IdOwner
+            });
+            return Ok(resukt);
         }
 
 
@@ -95,18 +87,9 @@ namespace ApiRest.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Create([FromBody] PropertyRequest request)
         {
-            try
-            {
-                var result = await propertyService.Create(request);
-                if (result.StatusCode == System.Net.HttpStatusCode.OK)
-                    return Ok(result);
-                else
-                    return BadRequest();
-            }
-            catch (Exception)
-            {
-                return Problem();
-            }
+            var result = await propertyService.Create(request);
+            return Ok(result);
+
         }
 
 
@@ -137,18 +120,9 @@ namespace ApiRest.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Update([FromBody] PropertyUpdateRequest request)
         {
-            try
-            {
-                var result = await propertyService.Update(request);
-                if (result.StatusCode == System.Net.HttpStatusCode.OK)
-                    return Ok(result);
-                else
-                    return BadRequest();
-            }
-            catch (Exception)
-            {
-                return Problem();
-            }
+            var result = await propertyService.Update(request);
+            return Ok(result);
+
         }
     }
 }

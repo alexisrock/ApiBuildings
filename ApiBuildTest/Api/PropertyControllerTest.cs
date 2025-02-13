@@ -5,9 +5,11 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using ApiRest.Controllers;
-using Aplication.Interfaces;
+using Application.Interfaces;
 using Domain.Common;
 using Domain.DTO;
+using Domain.Exceptions;
+using Domain.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -61,19 +63,18 @@ namespace ApiBuildTest.Api
         {
             // Arrange
             var exceptionMessage = "Test exception message";
-            Mock.Setup(x => x.GetPropertiesAll(It.IsAny<FiltroProperty>())).ThrowsAsync(new Exception(exceptionMessage));
+            Mock.Setup(x => x.GetPropertiesAll(It.IsAny<FiltroProperty>())).ThrowsAsync(new ApiException(exceptionMessage));
 
             // Act
-            var result = await _controller.GetAll(null, null, null, null, 1, 10);
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                await _controller.GetAll(null, null, null, null, 1, 10);
+            });
+
 
             // Assert
-            Assert.IsInstanceOf<ObjectResult>(result);
-            var problemResult = (ObjectResult)result;
-            Assert.That(problemResult.StatusCode, Is.EqualTo(StatusCodes.Status500InternalServerError));
-
-            var problemDetails = problemResult.Value as ProblemDetails;
-            Assert.IsNotNull(problemDetails);
-            Assert.That(problemDetails.Detail, Is.EqualTo(exceptionMessage));
+            Assert.That(ex.Message, Is.EqualTo("Test exception message"));
+            Assert.That(ex.StatusCode, Is.EqualTo(500));
         }
 
 
@@ -99,16 +100,20 @@ namespace ApiBuildTest.Api
         public async Task Create_ReturnsBadRequest_WhenServiceReturnsBadRequest()
         {
             // Arrange
-            var request = new PropertyRequest { /* Initialize with valid data */ }; // Important!
-            var baseResponse = new BaseResponse { StatusCode = HttpStatusCode.BadRequest, /* ... other properties */ };
-            Mock.Setup(x => x.Create(request)).ReturnsAsync(baseResponse);
+            var request = new PropertyRequest { /* Initialize with valid data */ };        
 
+            Mock.Setup(x => x.Create(request)).ThrowsAsync(new NotFoundException("El nombre del edificio es obligatorio."));
             // Act
-            var result = await _controller.Create(request);
+
+            var ex = Assert.ThrowsAsync<NotFoundException>(async () =>
+            {
+                await _controller.Create(request);
+            });
+
 
             // Assert
-            Assert.IsInstanceOf<BadRequestResult>(result);
-            Assert.That(((BadRequestResult)result).StatusCode, Is.EqualTo(StatusCodes.Status400BadRequest));
+            Assert.That(ex.Message, Is.EqualTo("El nombre del edificio es obligatorio."));
+            Assert.That(ex.StatusCode, Is.EqualTo(404));
 
         }
 
@@ -118,18 +123,18 @@ namespace ApiBuildTest.Api
             // Arrange
             var request = new PropertyRequest { /* Initialize with valid data */ }; // Important!
             var exceptionMessage = "Test exception";
-            Mock.Setup(x => x.Create(request)).ThrowsAsync(new Exception(exceptionMessage));
+            Mock.Setup(x => x.Create(request)).ThrowsAsync(new ApiException(exceptionMessage));
 
             // Act
-            var result = await _controller.Create(request);
+            var ex = Assert.ThrowsAsync<ApiException>(async () =>
+            {
+                await _controller.Create(request);
+            });
+
 
             // Assert
-            Assert.IsInstanceOf<ObjectResult>(result); // Or ProblemResult if you return that directly
-            var problemResult = (ObjectResult)result;
-            Assert.That(problemResult.StatusCode, Is.EqualTo(StatusCodes.Status500InternalServerError));
-
-            var problemDetails = problemResult.Value as ProblemDetails;
-            Assert.IsNotNull(problemDetails);
+            Assert.That(ex.Message, Is.EqualTo("Test exception"));
+            Assert.That(ex.StatusCode, Is.EqualTo(500));
 
         }
 

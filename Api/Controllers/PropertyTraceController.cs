@@ -1,6 +1,6 @@
 ﻿using ApiRest.Helpers;
-using Aplication.Interfaces;
-using Aplication.Services;
+using Application.Interfaces;
+using Application.Services;
 using Domain.Common;
 using Domain.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -53,18 +53,9 @@ namespace ApiRest.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Update([FromBody] PropertyTraceUpdateRequest request)
         {
-            try
-            {
-                var result = await propertyTraceService.Update(request);
-                if (result.StatusCode == System.Net.HttpStatusCode.OK)
-                    return Ok(result);
-                else
-                    return BadRequest();
-            }
-            catch (Exception)
-            {
-                return Problem();
-            }
+            var result = await propertyTraceService.Update(request);
+            return Ok(result);
+
         }
     }
 }

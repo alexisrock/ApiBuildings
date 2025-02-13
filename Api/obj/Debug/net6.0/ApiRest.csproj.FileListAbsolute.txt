@@ -177,6 +177,7 @@ D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Microsoft.IdentityMo
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\NLog.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\NLog.Extensions.Hosting.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\NLog.Extensions.Logging.dll
@@ -202,12 +203,12 @@ D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\runtimes\win\lib\net
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Aplication.dll
+D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Application.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Domain.dll
-D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Infraestructure.dll
-D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Aplication.pdb
+D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Infrastructure.dll
+D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Application.pdb
 D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Domain.pdb
-D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Infraestructure.pdb
+D:\Documentos\Projects\C#\ApiBuildings\Api\bin\Debug\net6.0\Infrastructure.pdb
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\ApiRest.csproj.AssemblyReference.cache
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\ApiRest.GeneratedMSBuildEditorConfig.editorconfig
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\ApiRest.AssemblyInfoInputs.cache
@@ -226,7 +227,6 @@ D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\staticwebassets\msbu
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ApiRest.props
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ApiRest.props
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\staticwebassets.pack.json
-D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\ApiRest.csproj.Up2Date
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\ApiRest.dll
 D:\Documentos\Projects\C#\ApiBuildings\Api\obj\Debug\net6.0\refint\ApiRest.dll
