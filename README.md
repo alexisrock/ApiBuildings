@@ -18,9 +18,11 @@ se utilizo la injeccion de dependencias de net 6.
 <h2 align="left"> Tecnologias utilizadas</h2>
 <p>
     <li>Net 6</li>
-    <li>Entityframewoekcore</li>
+    <li>Entityframeworkcore</li>
     <li>Mapper</li>
     <li>Nlog</li>
+    <li>NUnit</li>
+
 </p>
 
 <h2 align="left"> Prerequisitos</h2>
@@ -49,6 +51,19 @@ se utilizo la injeccion de dependencias de net 6.
         <li> luego  ejecutar el comadno "dotnet public -o rutaarchivos"  </li> 
 </ul>
 </p>
+
+
+<h2 align="left"> Ejecucion de los test</h2>
+<p>
+     
+<ul> 
+        <li> Ubicar la carpeta que termina en Test </li> 
+        <li> luego ejecutar el comando dotnet test </li> 
+        <li> validar que los 33 test se ejecuten corrrectamente  </li> 
+        
+</ul>
+</p>
+
 
 <h2 align="left"> Version del aplicativo</h2>
 <p> V.0.0.1</p>
